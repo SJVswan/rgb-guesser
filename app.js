@@ -7,7 +7,7 @@ const restart = document.querySelector('#restart');
 const inputs = document.querySelectorAll('input');
 let rgb = [0, 0, 0];
 let highScore = 0;
-
+//
 // Starts game
 start.addEventListener('click', () => {
     start.classList.toggle('hidden');
