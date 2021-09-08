@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Guesser</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400, 500, 600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323:400, 500, 600" rel="stylesheet">
+</head>
+
+<body class="wrapper">
+    <h1>RGB Guesser</h1>
+    <div id="stage">
+        <h5 id="highScore" class="hidden">High Score: 0</h5>
+        <h1 id="start">Click to Start!</h1>
+        <div id="guess" class="hidden">
+            <div>
+                <label for="redGuess">Red:</label>
+                <input id="redGuess" type="number" min="0" max="255" required="required"></input>
+            </div>
+            <div>
+                <label for="greenGuess">Green:</label>
+                <input id="greenGuess" type="number" min="0" max="255" required></input>
+            </div>
+            <div>
+                <label for="blueGuess">Blue:</label>
+                <input id="blueGuess" type="number" min="0" max="255" required></input>
+            </div>
+        </div>
+        <button id="submit" class="hidden">Submit Guess</button>
+        <div id="result" class="hidden">
+            <h1 id="scoreDisplay">0 POINTS</h1>
+            <button id="restart">Try Again?</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

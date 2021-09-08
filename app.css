@@ -1,0 +1,94 @@
+html, body {
+    font-family: 'VT323', sans-serif;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 48px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#stage {
+    height: 100%;
+}
+
+#guess {
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    font-weight: 600;
+    
+    flex-flow: column;
+}
+
+@media (min-width: 768px) {
+    #guess {
+        justify-content: center;
+        flex-flow: row;
+    }
+
+    #guess div {
+        padding: 0 5%;
+    }
+}
+
+
+button, label, input {
+    font-size: inherit;
+    font-family: inherit;
+    transition: all 0.1s;
+}
+
+#restart {
+    height: 50px;
+    width: 200px;
+    font-size: 36px;
+}
+
+button:hover {
+    border-color: #f1ff5c;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+}
+
+.wrapper { 
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 300% 300%;
+  
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;}
+  
+    @-webkit-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-moz-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-o-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @keyframes rainbow { 
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+}
