@@ -32,7 +32,7 @@ submit.addEventListener('click', () => {
         } else {
             let comparison = Math.abs(compare[i] - rgb[i]);
             if (comparison > 99) {
-                comparison = 255; //Force score addition of 0 for specific color's guess
+                comparison = 255; //Force score addition of 0 if guess is >100 off
             }
             score += Math.round(Math.pow(comparison * -1 + 255, 1.2466));
             result.children[0].innerText = `${score} POINTS (${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
@@ -58,7 +58,7 @@ restart.addEventListener('click', () => {
     submit.classList.toggle('hidden');
 })
 
-// Generates random RGB values for guessing
+// Generates random RGB values 
 function generateRGB() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);

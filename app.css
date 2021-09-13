@@ -21,10 +21,10 @@ html, body {
     justify-content: flex-start;
     align-items: space-between;
     font-weight: 600;
-    
     flex-flow: column;
 }
 
+/* Handling mobile devices */
 @media (min-width: 768px) {
     #guess {
         justify-content: center;
@@ -40,6 +40,7 @@ html, body {
 button, label, input {
     font-size: inherit;
     font-family: inherit;
+    margin: 5px;
     transition: all 0.1s;
 }
 
@@ -49,6 +50,7 @@ button, label, input {
     font-size: 36px;
 }
 
+/* Rainbow border on hover */
 button:hover {
     border-color: #f1ff5c;
     border: 5px solid transparent;
@@ -56,7 +58,8 @@ button:hover {
     border-image-slice: 1;
 }
 
-.wrapper { 
+/* Rainbow background generator */
+.rainbow-bg { 
     height: 100%;
     width: 100%;
     left:0;

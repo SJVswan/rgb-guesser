@@ -12,11 +12,12 @@
 </head>
 
 
-<body class="wrapper">
+<body class="rainbow-bg">
     <h1>RGB Guesser</h1>
     <div id="stage">
         <h5 id="highScore" class="hidden">High Score: 0</h5>
         <h1 id="start">Click to Start!</h1>
+        <!-- Input components -->
         <div id="guess" class="hidden">
             <div>
                 <label for="redGuess">Red:</label>
@@ -31,7 +32,9 @@
                 <input id="blueGuess" type="number" min="0" max="255" required></input>
             </div>
         </div>
+
         <button id="submit" class="hidden">Submit Guess</button>
+
         <div id="result" class="hidden">
             <h1 id="scoreDisplay">0 POINTS</h1>
             <button id="restart">Try Again?</button>
