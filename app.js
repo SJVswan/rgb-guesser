@@ -19,31 +19,39 @@ start.addEventListener('click', () => {
 
 // Evaluates answers
 submit.addEventListener('click', () => {
-    let compare = [document.getElementById('redGuess').value, document.getElementById('greenGuess').value, document.getElementById('blueGuess').value];
-    let score = 0;
+    let compare = [document.getElementById('redGuess').value, document.getElementById('greenGuess').value,
+    document.getElementById('blueGuess').value];
+
+    //Input validation
     for (let i = 0; i < 3; i++) {
         if (compare[i] == '') {
             alert('Please guess each color channel value before submitting.')
             return;
-        }
-        if (compare[i] > 255 || compare[i] < 0) {
+        } else if (compare[i] > 255 || compare[i] < 0) {
             alert('Please only guess numbers between 0 and 255.');
             return;
-        } else {
-            let comparison = Math.abs(compare[i] - rgb[i]);
-            if (comparison > 99) {
-                comparison = 255; //Force score addition of 0 if guess is >100 off
-            }
-            score += Math.round(Math.pow(comparison * -1 + 255, 1.2466));
-            result.children[0].innerText = `${score} POINTS (${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-            stage.children[0].classList.remove('hidden');
-            if (score > highScore) {
-                highScore = score;
-                stage.children[0].innerText = `High Score: ${highScore}`;
-            }
-            result.classList.toggle('hidden');
-            submit.classList.toggle('hidden');
         }
+    }
+
+    // Score calculation
+    let score = 0;
+    for (let i = 0; i < 3; i++) {
+        let comparison = Math.abs(compare[i] - rgb[i]);
+        if (comparison > 99) {
+            comparison = 255; //Force score addition of 0 if guess is >100 off
+        }
+        score += Math.round(Math.pow(comparison * -1 + 255, 1.2466));
+    }
+
+    //Score display
+    result.classList.toggle('hidden');
+    submit.classList.toggle('hidden');
+    result.children[0].innerText = `${score} POINTS (R: ${rgb[0]}, G: ${rgb[1]}, B: ${rgb[2]})`;
+    stage.children[0].classList.remove('hidden');
+
+    if (score > highScore) {
+        highScore = score;
+        stage.children[0].innerText = `High Score: ${highScore}`;
     }
 })
 
